@@ -1,0 +1,17 @@
+.container{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3rem;
+}
+
+@media (min-width: 661px) and (max-width: 1023px) {
+    .container{
+        justify-content: space-between;
+     }
+}
+
+@media (min-width:1024px) {
+    .container{
+       justify-content: space-between;
+    }
+}

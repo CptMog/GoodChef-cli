@@ -1,0 +1,30 @@
+.container{
+    background-color: var(--secondary-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    padding: 4.5rem 1.2rem 2rem 1.2rem;
+}
+
+.container div:first-child img{
+    margin-bottom: 2rem;
+}
+
+.container div a{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.2rem;
+}
+
+@media (min-width: 1024px){
+    .container{
+        height: 142vh;
+        justify-content: flex-start;
+        gap: 20rem;
+    }
+}

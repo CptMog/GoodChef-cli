@@ -1,0 +1,173 @@
+.container{
+    padding: 0 1rem;
+    margin-top: 2rem;
+}
+
+.modal{
+    border: none;
+    width: 90%;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 3rem 4rem 3rem;
+    box-shadow: 0px 3px 5px #cfcaca;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,50%);
+}
+
+.container .modal .head{
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 1.5rem;
+}
+
+.container .modal .inputformated input{
+    width: 100%;
+}
+
+.panel{
+    display: flex;
+    gap: 1rem;
+}
+
+.container h2,.container h3{
+    text-align: center;
+    margin-bottom: 1.3rem;
+}
+
+.container form{
+    margin-bottom: 2rem;
+}
+
+.container .alignbuttons{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.container form + .alignbuttons button,.btn{
+display: flex;
+padding: 0.9375rem 2.625rem;
+justify-content: center;
+align-items: center;
+/* gap: 0.625rem; */
+border: 1px solid var(--primary-color);
+border-radius: 0.6875rem;
+background-color: var(--primary-color);
+color:white;
+cursor: pointer;
+}
+
+.container form + .alignbuttons button:hover, .btn:hover{
+    background-color: white;
+    border: 1px solid var(--primary-color);
+    color:var(--primary-color);
+    transition: all .4s;
+}
+
+.container form + .alignbuttons button:nth-child(2){
+    background-color: rgb(232, 96, 96);
+}
+
+.container form + .alignbuttons button:nth-child(2):hover{
+    background-color: white;
+    border: 1px solid rgb(232, 96, 96);
+    color:rgb(232, 96, 96);;
+    transition: all .4s;
+}
+
+.container .inputformated{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.3rem;
+    /* align-items: flex-start; */
+}
+
+.container .left .inputformated{
+    align-items: flex-start;
+}
+
+.container .inputformated input{
+    font-size: 16px;
+    padding: .5rem;
+    border-radius: .2rem;
+}
+
+.container .left{
+    margin: auto;
+    text-align: center;
+}
+
+.container .left img{
+    width: 11.6875rem;
+    height: 11.6875rem;
+    border-radius:11.6875rem;
+    flex-shrink: 0;
+    object-fit: cover;
+}
+
+.container .authorized{
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+.container .left{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap:1rem;
+    margin: 0;
+}
+
+@media (min-width: 426px) and (max-width: 1023px) {
+    .modal{
+        width: 60%;
+    }
+}
+
+@media (min-width:1024px) {
+
+    .container{
+        width: 85%;
+    }
+    .modal{
+        width: 40%;
+    }
+    .container h2,.container h3{
+        text-align: left;
+    }
+
+    .container .left{
+        align-items: flex-start;
+    }
+
+    .container form .top{
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+        gap: 2rem;
+    }
+
+    .container form .bottom{
+        display: flex;
+        gap: 2rem;
+        flex-wrap: wrap;
+    }
+
+    .container form .bottom .inputformated input{
+        margin-bottom: -1rem;
+    }
+
+    .container .inputformated input{
+        width:35rem ;
+    }
+
+    .container .alignbuttons{
+        flex-direction: row;
+        gap: 2rem;
+    }
+}

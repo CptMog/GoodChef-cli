@@ -1,0 +1,65 @@
+.commcard{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+}
+
+.stars{
+    width: 6.4rem;
+    height: 1.2rem;
+}
+
+.commcard div:first-child{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: .5rem;
+}
+
+.commcard .profile{
+    width: 6.25rem;
+    height: 6.25rem;
+    flex-shrink: 0;
+    border-radius: 100%;
+}
+
+.commcard .info{
+    display: flex;
+    flex-direction: column;
+}
+
+.commcard .info span{
+    color: #000;
+font-family: Roboto;
+font-size: 1rem;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+margin-bottom: .5rem;
+}
+
+.commcard .info p{
+    display: none;
+}
+
+@media (min-width: 426px) and (max-width: 1023px){
+    
+    .commcard .text{
+        display: none;
+    }
+
+    .commcard .info p{
+        display: block;
+    }
+}
+
+@media (min-width: 1024px){
+    
+    .commcard .text{
+        display: none;
+    }
+
+    .commcard .info p{
+        display: block;
+    }
+}

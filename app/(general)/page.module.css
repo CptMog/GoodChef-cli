@@ -1,0 +1,229 @@
+.container{
+  /*width: 1234px;*/
+  margin: 0 auto;
+  position: relative;
+  padding: 5rem 0 0 0;
+}
+
+.hero{
+  background-color: #FFF8E5;
+  margin-bottom: 2.5rem;
+  padding: 1rem;
+}
+
+.hero h1{
+  font-size: 2.5rem;
+  text-align: center;
+  padding: 2.5rem 0;
+  font-weight: 300;
+}
+
+
+.align{
+  width: 100%;
+  margin: 0 auto;
+}
+
+
+.searchAlign{
+  display: none;
+  position: absolute;
+  top:82vh;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  margin: 0 auto;
+  z-index: 100;
+}
+
+.trendcontainer{
+  display:flex;
+  justify-content: space-between;
+  margin: 2rem 0;
+}
+
+.trendcontainer h2{
+  font-size: 2rem;
+  font-weight: normal;
+}
+
+.trendcontainer a{
+  padding: 0.625rem 1.5rem;
+  border-radius: 2.0625rem;
+  display: flex;
+  align-items: center;
+  background:  #F97B22;
+  border: 1px solid #F97B22;
+  color: white;
+}
+
+.trendcontainer a:hover{
+  background:  white;
+  color: #F97B22;
+  transition: all .3s;
+}
+
+.btnPrimary{
+  padding: 0.5rem 0.6rem;
+  border-radius: 2.0625rem;
+  background:  #F97B22;
+  border: 1px solid #F97B22;
+  color: white;
+}
+
+.btnPrimary:hover{
+  background:  white;
+  color: #F97B22;
+  transition: all .3s;
+}
+.containernewsletter{
+  margin: 0 0 3rem 0;
+  height: 30rem;
+  background-image: url("http://localhost:3000/biNewsLetter.jpg");
+  background-size:cover;
+  display: flex;
+  align-items: center;
+}
+
+.containernewsletter div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.containernewsletter div h3{
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: white;
+  font-weight: normal;
+  text-align: center;
+}
+
+.containernewsletter div form{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  height: 3rem;
+  padding: 1rem;
+  border-radius: 2rem;
+}
+
+.containernewsletter div form input{
+  font-size: 18px;
+  
+  width: 50%;
+  border: none;
+}
+
+.categorycontainer, .testimonails{
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.categorycontainer h2, .testimonails h2{
+  font-size: 2rem;
+  font-weight: normal;
+}
+
+.swipercategory {
+  margin-bottom: 6rem;
+}
+
+.slideCircle{
+  border-radius: 9.5rem;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.35) 100%);
+  width: 9.5rem !important;
+  height: 9.5rem !important;
+  position: relative;
+  color: white;
+  font-weight: 800;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center !important;
+  align-items: center;
+}
+
+.slideCircle img{
+  width: 9.5rem !important;
+  height: 9.5rem !important;
+  opacity: .7;
+  border-radius: 9.5rem;
+  z-index: -1;
+  position: absolute;
+}
+
+@media (min-width: 426px) and (max-width: 1023px) {
+
+  .searchAlign{
+    display: block;
+    width: 80%;
+    top:84vh;
+  }
+
+  .containernewsletter div{
+    margin-left: 8%;
+  }
+
+  .btnPrimary{
+    padding: 0.85rem 1.5rem;
+  }
+
+  .containernewsletter div form{
+      padding: 2rem .5rem;
+  }
+  
+  .containernewsletter div form input{
+    width: auto;
+    padding: .5rem 3.2rem; 
+  }
+
+  .align{
+    width: 80%;
+  }
+}
+
+@media (min-width: 1024px) {
+
+  .hero{
+    padding: 1rem 1rem 8rem 1rem;
+  }
+
+  .hero h1{
+    font-size:3.25rem;
+    text-align: center;
+    padding: 3rem 0;
+    font-weight: 300;
+  }
+
+  .searchAlign{
+    display: block;
+    width: 45rem;
+    top:84vh;
+  }
+
+  .containernewsletter div{
+    margin-left: 8%;
+  }
+
+  .btnPrimary{
+    padding: 0.85rem 1.5rem;
+  }
+
+
+  .containernewsletter div form{
+    padding: 2rem .5rem;
+}
+
+
+  .containernewsletter div form input{
+    width: auto;
+    padding: .5rem 3.2rem; 
+  }
+
+  .align{
+    width: 80%;
+  }
+}

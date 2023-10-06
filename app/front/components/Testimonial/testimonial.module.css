@@ -1,0 +1,31 @@
+.testimonialcontainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    margin-bottom: 2rem;
+}
+
+.seeallcontainer{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    color: #F97B22;
+    margin-bottom: 4rem;
+}
+@media (min-width: 426px) and (max-width: 1023px) {
+    .testimonialcontainer{
+        flex-direction: column;
+        justify-content: center;
+        align-items:center;
+    }
+}
+
+
+@media (min-width: 1024px) {
+    .testimonialcontainer{
+        flex-direction: row;
+        justify-content: space-between;
+        align-items:center;
+    }
+}

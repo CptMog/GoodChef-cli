@@ -1,0 +1,63 @@
+.container{
+    text-align: center;
+    position: relative;
+    flex-shrink: 0;
+    width: 90%;
+    height: 21rem;
+    margin-bottom: 1.5rem;
+}
+
+.avatar{
+    position: absolute;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    top: 15%;
+    z-index: 10;
+    width: 7.8125rem;
+    height: 7.8125rem;
+    flex-shrink: 0;
+    border-radius: 7.8125rem;
+}
+
+.avatar img{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    border-radius: 50%;
+}
+
+.datatestimonial{
+    position: absolute;
+    bottom: 0;
+    padding: 0 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 16.5rem;
+    box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.15);
+}
+
+.datatestimonial h2{
+    margin: 1rem 0;
+    color: #F97B22;
+}
+
+.datatestimonial p:first-of-type{
+    margin-bottom: 1rem;
+}
+
+@media (min-width: 426px) and (max-width: 1023px) {
+    .container{
+        width: 100%;
+    }
+}
+
+@media (min-width: 1024px){
+    .container{
+        width: 30%;
+        margin-bottom: 0;
+    }
+}

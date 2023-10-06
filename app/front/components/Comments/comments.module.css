@@ -1,0 +1,24 @@
+.commscontainer{
+    padding: 0 0 1.5rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.commscontainer button{
+    background-color: var(--primary-color);
+    border-radius: 8px;
+    color: white;
+    padding: 1rem 2.5rem;
+    margin-top: 1rem;
+    text-align: center;
+    border: 1px solid var(--primary-color);
+    cursor: pointer;
+}
+
+.commscontainer button:hover{
+    background-color: white;
+    color: var(--primary-color);
+    transition: all .4s;
+}

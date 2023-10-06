@@ -1,0 +1,101 @@
+.container{
+    padding: 5.4rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.close{
+    position: absolute;
+    top: 2rem;
+    left: 88%;
+}
+
+.container .wallpaper{
+    display: none;  
+}
+
+.container .wallpaper + div{
+    padding: .5rem;
+}
+
+.container .wallpaper + div img{
+    margin-bottom: 3rem;
+}
+
+.container .wallpaper + div,.container .wallpaper + div form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container .wallpaper + div form input{
+width: 20rem;
+height: 3.1875rem;
+flex-shrink: 0;
+font-family: Roboto;
+font-size: 1rem;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+margin-bottom: 1rem;
+}
+
+.container .wallpaper + div form span{
+    margin: 1rem 0;
+}
+
+.container .wallpaper + div form a:first-of-type{
+    align-self: flex-start;
+    margin-bottom: 2rem;
+    text-decoration: underline;
+}
+
+.btn,.btnprimary{
+    width: 20.75rem;
+    height: 2.75rem;
+    border-radius: 2.1875rem;
+    background: rgba(217, 217, 217, 0.80);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btnprimary{
+    color: white;
+    background-color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+}
+
+.btnprimary:hover{
+    color: var(--primary-color);
+    background-color: white;
+    transition: all 0.4s;
+}
+
+
+@media (min-width:1024px) {
+    .container{
+        padding: 0;
+    }
+    
+    .container .wallpaper{
+        display: block;  
+    }
+
+    .container .wallpaper{
+        width: 70%;
+        height: 46rem;
+    }
+
+    .container .wallpaper + div{
+        width: 40%;
+        
+    }
+    
+    .container .wallpaper img{
+        max-width: 100%;
+        height: 46rem;
+        object-fit: cover;
+    }
+}

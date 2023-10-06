@@ -1,0 +1,125 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 1rem;
+}
+
+ .container .dashboard{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1.7rem;
+}
+
+.container .dashboard article{
+    padding: 1rem 1.5rem;
+    margin: 0 0 2rem 0;
+    background-color: #FFF9E9;
+}
+
+ .container .dashboard h2,  .container .dashboard article h2{
+    /* color: #333; */
+     text-align: center;
+     font-weight: 300;
+    font-size: 1.5rem;
+    font-style: normal;
+    line-height: normal;
+    width: 100%;
+    margin-bottom: 3.5rem;
+}
+
+ .container .dashboard .recepiecontainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: .5rem;
+}
+
+ .container .dashboard article h2{
+    margin-bottom: 0.8rem;
+    width: 100%;
+    text-align: left;
+}
+
+ .container .dashboard article p{
+    margin-bottom: 1.8rem;
+}
+
+ .container .dashboard article a{
+    display: inline-flex;
+    padding: 0.8125rem 1.125rem;
+    justify-content: center;
+    color: white;
+    align-items: center;
+    gap: 0.625rem;
+    border-radius: 0.5rem;
+    background-color: var(--primary-color);
+}
+
+ .container .dashboard h2 strong{
+    font-weight: 700;
+}
+
+@media (min-width: 426px) and (max-width: 1023px) {
+     .container .dashboard .recepiecontainer{
+        flex-direction: row;
+        justify-content: center;
+        gap: 1rem;
+    }
+     .container .dashboard h2,  .container .dashboard article h2{
+        text-align: left;
+    }
+    
+     .container .dashboard article{
+        width: 90%;
+        border-radius: 1.2rem;
+    }
+    .container .dashboard .recepieday{
+        align-self: flex-start;
+    }
+    
+}
+
+@media (min-width: 1024px){
+
+     .container{
+        width: 80%;
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 5rem;
+        /* padding-right: 4rem; */
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+     .container .dashboard{
+        margin-top: 0;
+        align-items: flex-start;
+        overflow-y:auto;
+        height: 51rem;
+    }
+
+     .container .dashboard h2,  .container .dashboard article h2{
+        text-align: left;
+    }
+
+     .container .dashboard .recepiecontainer{
+        flex-direction: row;
+        justify-content: flex-start;
+        /* gap: 1rem; */
+    }
+
+     .container .dashboard .recepieday{
+        align-self: flex-start;
+    }
+    
+     .container .dashboard article{
+        width: 90%;
+        border-radius: 1.2rem;
+        padding-left: 8rem;
+        margin-top: 2rem;
+    }
+}

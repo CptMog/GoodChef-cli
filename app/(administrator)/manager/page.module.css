@@ -1,0 +1,88 @@
+.container{
+    padding: 1rem;
+}
+
+.container h1{
+    text-align: center;
+    margin-bottom: 2rem;
+    text-decoration: underline;
+}
+
+.formated{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+.modal button{
+    background-color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    padding: .7rem 2rem;
+    border-radius: .5rem;
+    cursor: pointer;
+    color: white;
+}
+
+.modal button:hover{
+    color: var(--primary-color);
+    background-color: white;
+    transition: .4s all;
+}
+
+.formated label{
+    font-weight: bold;
+}
+
+.formated input[type=text]{
+    border-radius: .3rem;
+    padding: .5rem 1rem;
+    /* width: 70%; */
+}
+
+.modal{
+    border: none;
+    width: 50%;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 3rem 4rem 3rem;
+    box-shadow: 0px 3px 5px #cfcaca;
+    position: fixed;
+    left: 50%;
+    z-index: 1;
+    transform: translate(-50%);
+}
+
+.container .modal .head{
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 1.5rem;
+}
+
+.container .tabcontainer{
+    margin-bottom: 2rem;
+}
+
+.container .tabcontainer .align{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.container .tabcontainer .align button,.container .tabcontainer .align a{
+    background-color: #9EB384;
+    color: white;
+    border: 1px solid #9EB384;
+    border-radius: .4rem;
+    padding: 0 .5rem;
+}
+
+.container .tabcontainer .align a{
+    padding: .8rem .5rem;
+}
+
+@media (min-width:1024px) {
+    .container{
+        padding: 2rem 12rem;
+    }
+}

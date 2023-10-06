@@ -1,0 +1,84 @@
+.container{
+    width: 18.125rem;
+
+    flex-shrink: 0;
+    border-radius: 3.6875rem;
+    background: #FFF9E9;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 1.2rem 0;
+}
+
+.container figure{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.container figure .circle{
+    width: 5rem;
+    height: 5rem;
+    border-radius: 5rem;
+    flex-shrink: 0;
+}
+
+.container figure .circle img{
+    width: 5rem;
+    height: 5rem;
+    border-radius: 5rem;
+    object-fit: cover;
+}
+
+.container figure + div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    width: 15rem;
+}
+
+.container figure + div div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container figure + div div span:first-child{
+    color: var(--primary-color);
+    font-family: Roboto;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.container figure + div div span:nth-child(2){
+    font-family: Roboto;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.container figure + div + div{
+    width: 15rem;
+}
+
+.container h2{
+    margin-bottom: 1rem;
+    color: #000;
+font-family: Roboto;
+font-size: 1.2rem;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+
+.container a{
+    text-align: center;
+    display: block;
+    color: var(--primary-color);
+}

@@ -1,0 +1,157 @@
+.container h2{
+    margin-bottom: 1rem;
+}
+
+.container form .formatedimage{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.container form .formatedimage img{
+    width: 15rem;
+    
+}
+
+.container .formatedinput{
+    display: flex;
+    flex-direction: column;   
+}
+
+.container form{
+    display: flex;
+    flex-direction: column;
+    align-items: center ;
+}
+
+.container form fieldset legend{
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: .5rem 1rem;
+}
+
+.container form fieldset{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: .8rem;
+    gap: .5rem;
+    width: 90%;
+    padding: .8rem;
+}
+
+.container form fieldset .infos{
+    display: flex;
+    flex-direction: column;
+}
+
+.container .formatedinput input,.container .formatedinput textarea{
+    width: 16rem;
+    border-radius: .3rem;
+    padding: 8px .3rem;
+    margin-bottom: .3rem;
+}
+
+.container form .infosrecepie .align{
+    display: flex;
+    align-items: center;
+    gap: .1rem;
+}
+
+.container form .infosrecepie .align input{
+    width: 3.5rem;
+}
+
+.container form .stepsrecepie div:last-child{
+    width: 100%;
+}
+
+.container button{
+    /* width: 5rem; */
+    background-color: var(--primary-color);
+    color: white;
+    border:1px solid var(--primary-color);
+    cursor: pointer;
+    padding: .5rem 1rem;
+    border-radius: .4rem;
+}
+
+.container button:hover{
+    background-color: white;
+    color: var(--primary-color);
+    transition: all .4s;
+}
+
+@media (min-width: 426px) and (max-width: 1023px) {
+    .container form fieldset{
+        width: 100%;
+    }
+
+    .container .formatedinput input,.container .formatedinput textarea{
+        width: 24rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container{
+        width: 80%;
+        padding-top: 1rem;
+        overflow: auto;
+        height: 61rem;
+    }
+    
+    
+    .container form fieldset legend{
+        text-align: left;
+        margin-bottom: 1rem;
+        font-size: 18px;
+    }
+
+    .container form fieldset{
+        flex-direction: row;
+        border: none;
+        gap: 5rem;
+        margin-bottom: .2rem;
+        align-items: flex-start;
+    }
+
+    .container form .formatedimage img{
+        width: 18rem;  
+        height: 15rem;
+        
+    }
+
+    .container form fieldset .infos input,.container form fieldset .infos textarea{
+        width: 29rem;
+    }
+
+    .container form .stepsrecepie{
+        display: flex;
+        flex-direction: column;
+        gap:.5rem;
+    }
+
+    .container form .infosrecepie{
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+    }
+
+    .container form .infosrecepie .align{
+        gap: .5rem;
+    }
+
+    .container form .infosrecepie .align input{
+        width: 5rem;
+        height: 3rem;
+    }
+
+    .container form .infosrecepie .containertimes + .formatedinput textarea{
+        width: 29rem;
+        height: 10rem;
+    }
+
+    .container form .stepsrecepie .formatedinput textarea{
+        width: 49rem;
+        height: 7rem;  
+    }
+}

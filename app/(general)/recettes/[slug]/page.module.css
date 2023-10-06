@@ -1,0 +1,398 @@
+.container{
+    width: 100%;
+    padding: 5.4rem 0 3rem 0;
+}
+
+.infocontainer{
+    background-color: var(--secondary-color);
+    height: 20rem;
+    display: flex;
+    flex-direction: column;
+    padding: 3rem 1rem 0 1rem;
+
+}
+
+section.infocontainer div.details div.timedetails{
+    display: none;
+}
+
+.infocontainer h1{
+    color: var(--Text, #333);
+    font-family: Paytone One;
+    font-size: 1.9rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 1rem;
+    
+}
+
+section.infocontainer .details{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    font-size: 0.9rem;
+    gap: .8rem;
+}
+
+main section.infocontainer div.details div{
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+
+section.infocontainer .details div img{
+    margin-top: .6rem;
+}
+
+section.infocontainer .details div a{
+    text-decoration: underline;
+}
+
+ section.infocontainer .details div.optioncontainer{
+    flex-direction: row;
+    gap:.4rem;
+}
+
+section.infocontainer .details div.optioncontainer div{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0;
+} 
+
+aside.visual {
+    position: absolute;
+    top: 20rem;
+    left: 50%;
+    border-radius: 8px;
+    width: 90%;
+    flex-shrink: 0;
+    transform: translateX(-50%);
+}
+
+aside .assets img{
+    border-radius: 8px;
+    width: 100%;
+    height: 18.5rem;
+    flex-shrink: 0;
+}
+
+aside .ingredients{
+    flex-shrink: 0;
+    width: 100%;
+    margin-top: 1rem;
+    background-color: #F6F6F6;
+    padding: 1rem 0;
+}
+
+aside .ingredients h2{
+    color: var(--Text, #333);
+text-align: center;
+font-family: Roboto;
+font-size: 2rem;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+margin-bottom: 2rem;
+}
+
+aside .portions{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+aside .composnant{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+aside .composnant li{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    list-style: none;
+}
+
+section.preparation{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 45rem 1rem 0 1rem;
+}
+
+section.preparation h2,.recommandation h2, .comments h2{
+    color: var(--Text, #333);
+    font-family: Roboto;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-align: center;
+    margin: 1.2rem 0;
+}
+
+section.preparation .nutrition{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: .7rem;
+}
+
+section.preparation .nutrition .card{
+    background-color: var(--secondary-color);
+    padding: .2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+section.preparation .nutrition .card span:first-child{
+    margin: 0.3rem 0;
+}
+
+section.preparation .nutrition .card span:nth-child(2){
+    padding: .5rem .9rem;
+    background-color: white;
+}
+
+section.preparation .steps{
+    margin: 0;
+    padding: 0;
+}
+
+section.preparation .steps li{
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.3rem;
+}
+
+section.preparation .steps li .circle{
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background-color:var(--secondary-color);
+    border-radius: 100%;
+    font-weight: bold;
+} 
+
+section.recommandation{
+    padding: 0 1rem;
+}
+
+section.recommandation .recepieslider img{
+    width: 100%;
+    height: 9rem;
+    flex-shrink: 0;
+    border-radius: 8px;
+}
+
+section.comments {
+    padding: 0 1rem;
+}
+
+@media (min-width: 426px) and (max-width: 1023px) {
+    .container section h2{
+        text-align: start;
+    }
+
+
+    .infocontainer h1{
+        font-size: 2.3rem;
+        margin: 0 auto;
+        width: 90%;
+        margin-bottom: .5rem;
+    }
+
+    section.infocontainer .time{
+        display: none;
+    }
+
+    aside .assets img{
+        height: 20rem;
+        object-fit: cover;
+    }
+
+    section.preparation .nutrition .card span:first-child{
+        padding: .4rem 0;
+    }
+
+    section.preparation .nutrition .card span:nth-child(2){
+        padding: .8rem 2rem;
+    }
+
+    /* section.infocontainer .details{
+        font-size: 1rem;
+    }
+
+    section.infocontainer div.details div.timedetails{
+        display: flex;
+        flex-direction: row;
+    }
+
+    section.infocontainer div.details div.time{
+        display: none;
+    }
+
+    section.infocontainer div.details div.timedetails div{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0.5rem;
+        margin-bottom: 0;
+    }
+
+    section.infocontainer div.details div.timedetails div:first-child{
+        border-right: 1px solid #333;
+    }
+
+    section.infocontainer div.details div.timedetails  div span:nth-child(2){
+        display: flex;
+        align-items: center;
+    } */
+}
+
+@media (min-width: 1024px) {
+    aside.visual{
+        display: block;
+        width: 38%;
+        left: 75%;
+        top: 12rem;
+    }
+
+    aside .assets img{
+        height: 24rem;
+    }
+
+    aside .ingredients h2{
+        text-align: start;
+    }
+
+    aside .composnant{
+        align-items: flex-start;
+        margin-top: .8rem;
+    }
+
+    aside .portions{
+        justify-content: flex-start;
+    }
+
+    aside .composnant li,aside .ingredients h2, aside .portions{
+        padding-left: 3rem;
+    }
+
+    section.recommandation{
+        margin-bottom: 3rem;
+        padding: 0;
+    }
+
+    section.comments{
+        padding-left: 5rem;
+        width: 70%;
+    }
+    section.comments h2{
+        text-align: start;
+    }
+
+  section.recommandation h2{
+        text-align: start;
+        width: 50%;
+        margin-left: 5rem;
+    }
+
+    /* section.infocontainer *{
+        border: 1px solid;
+    } */
+    section.infocontainer {
+        /* padding-right: 25rem; */
+        padding-left: 5rem;
+        justify-content: flex-end;
+    }
+
+    section.infocontainer h1, section.infocontainer div.details{
+        width: 51%;
+    }
+
+    section.infocontainer h1{
+        /* margin-top: 1rem; */
+        font-size: 3.5rem;
+    }
+
+    section.infocontainer div.details{
+        align-items: center;
+        gap: 0;
+        justify-content: space-between;
+    }
+
+    section.infocontainer .time{
+        display: none;
+    }
+
+    section.preparation{
+        width: 50%;
+        padding: 0 1rem;
+    }
+
+    section.infocontainer div.details div.timedetails{
+        display: flex;
+        flex-direction: row;
+    }
+
+    section.infocontainer div.details div.time{
+        display: none;
+    }
+
+    section.infocontainer div.details div.timedetails div{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0.5rem;
+        margin-bottom: 0;
+    }
+
+    section.infocontainer div.details div.timedetails div:first-child{
+        border-right: 1px solid #333;
+    }
+
+    section.infocontainer div.details div.timedetails  div span:nth-child(2){
+        display: flex;
+        align-items: center;
+    }
+
+    div.nutrition{
+        margin-bottom: 2rem;
+    }
+
+    section.preparation {
+    align-items: flex-start;
+    padding-left: 5rem;
+    }
+
+    section.preparation div.nutrition{
+        gap: 1.5rem;
+    }
+
+    section.preparation .steps{
+        width: 80%;
+    }
+
+    section.preparation div.nutrition div.card span:first-child{
+        padding: .2rem 0;
+    }
+
+    section.preparation div.nutrition div.card span:nth-child(2){
+        padding: .5rem 1.6rem;
+    }
+}

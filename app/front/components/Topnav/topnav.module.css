@@ -1,0 +1,203 @@
+.header{
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    background-color: white;
+    padding: 8px 0;
+    z-index: 1000;
+    box-shadow: 0px 1px 10px 0px rgba(193, 193, 193, 0.25);
+}
+
+.submenuConatainer{
+    position: fixed;
+    bottom: 0;
+    z-index: 1000;
+    background-color: white;
+}
+
+.submenuConatainer ul{
+    padding: 0;
+    display: flex;
+    justify-content: space-evenly;
+    width: 100vw;
+    box-shadow: 0px -1px 4px #eeeeee;
+}
+
+.submenuConatainer ul li{
+    list-style: none;
+    padding: 16px 16px;
+    color: #333333;
+}
+
+.containerIcoBtn{
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+}
+
+.iconButton{
+    display: block;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.nav{
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content:space-between;
+    align-items: center;
+}
+
+.alignment{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.listNaviation{
+    position: absolute;
+    background-color: white;
+    padding: 4px;
+    top: 90px;
+    right: 0;
+}
+
+.listNaviation li{
+    margin: 1rem 0;
+}
+
+.open{
+    display: block;
+}
+
+.close{
+    display: none;
+}
+
+.list{
+    list-style: none;
+    margin: 0px 8px;
+}
+
+.list:hover{
+    border-bottom:1px solid var(--primary-color);
+
+}
+
+.containerLogin{
+    display: none;
+}
+
+.registration{
+    background-color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    padding: 16px;
+    cursor: pointer;
+}
+
+.registration:hover{
+    background-color: white;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    transition: all .2s;
+}
+
+.avatarContainer{
+    display: none;
+}
+
+
+/*TABLETE */
+@media (min-width: 426px) and (max-width: 1023px) {
+    .submenuConatainer{
+        display: none;
+    }
+}
+
+/*DESKTOP  */
+@media (min-width: 1024px) {
+    .nav{
+        width: 85%;
+        flex-direction: row;
+    }
+
+    .logo{
+        margin-right: 0;
+    }
+    .alignment{
+        justify-content: flex-start;
+    }
+
+    .iconButton{
+        display: none;
+    }
+
+    .submenuConatainer{
+        display: none;
+    }
+
+    .listNaviation{
+        display: flex;
+        position: relative;
+        top: 0;
+        /* margin-right: 20%; */
+    }
+
+    .listNaviation li{
+        margin: 8px 16px;
+    }
+    
+    .containerLogin{
+        display: flex;
+        align-items: center;
+        gap: 1.2rem;
+        margin-left: 8%;
+    }
+
+    .avatarContainer{
+        width: 21.5rem;
+        display: flex;
+        justify-content: center;
+        gap:1.5rem;
+        align-items: center;
+        position: relative;
+    }
+
+    .avatarContainer img{
+        display: block;
+        object-fit: cover;
+        border-radius: 64px;
+        /* cursor: pointer; */
+    }
+
+    .avatarContainer .profileMenu{
+        position: absolute;
+        background-color: white;
+        top:4rem;
+        /* border: 1px solid; */
+        left: 10rem;
+        padding: .8rem .3rem;
+        border-radius: .5rem;
+        box-shadow: 0px 10px 8px rgba(193, 193, 193, 0.25);
+    }
+
+    .avatarContainer .profileMenu ul{
+        padding: 0;
+        margin: 0;
+    }
+
+    .avatarContainer .profileMenu ul li{
+        list-style: none;
+        padding: .5rem 1.5rem;
+        cursor: pointer;
+        font-weight: bold;
+    }
+}
