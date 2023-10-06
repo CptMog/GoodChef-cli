@@ -19,7 +19,7 @@ export default function Home() {
     async function getData(){
      await fetch('http://localhost:8080/getCategories')
      .then(data => data.json())
-     .then(setDatas)
+     .then(data =>setDatas(data.categories))
     }
 
     async function getData(){
