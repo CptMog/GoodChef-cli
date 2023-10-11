@@ -16,10 +16,10 @@ export default function Home() {
   const [datas,setDatas] = useState(0)
   const [recepies,setRecepies] =useState([])
   useEffect(()=>{
-    async function getData(){
+    async function getDataCat(){
      await fetch('http://localhost:8080/getCategories')
      .then(data => data.json())
-     .then(data =>setDatas(data.categories))
+     .then(data =>setDatas(data))
     }
 
     async function getData(){
@@ -27,7 +27,7 @@ export default function Home() {
       .then(data => data.json())
       .then(datas => setRecepies(datas.recepies))
      }
-
+     getDataCat()
     getData()
   },[])
   return (
@@ -36,7 +36,6 @@ export default function Home() {
         <h1>Explorez. Partagez. Savourez.</h1>
         <Swiper
           navigation={true}
-          loop={true}
           autoplay={{
             delay: 1800,
             disableOnInteraction: false,
@@ -59,7 +58,6 @@ export default function Home() {
               slidesPerView: 5,
               spaceBetween:16,
               loop:true
-
             },
           }}
           modules={[Autoplay, Pagination, Navigation]}
@@ -76,12 +74,6 @@ export default function Home() {
       </div>
       <div className={styles.align}>
          <Dayrecepie />
-         <div className={styles.trendcontainer}>
-            <h2>Tendance</h2>
-            {/* <Link href={"/recettes#trendring"}>
-                voir tout
-            </Link> */}
-         </div>
          <Trend />
          <div className={styles.categorycontainer}>
             <h2>Nos categories</h2>

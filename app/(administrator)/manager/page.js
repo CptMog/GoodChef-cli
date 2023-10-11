@@ -14,8 +14,9 @@ export default function AdministratorPage(){
     const [openModal,setOpenModal] = useState(-1);
     const [catagorie,setCategorie] = useState(0);
     const [classification,setClassification] = useState(0);
-    const [recepies,setRecepies] = useState([])
-    const [catagories,setCategories] = useState([])
+    const [recepies,setRecepies] = useState([]);
+    const [catagories,setCategories] = useState([]);
+    const [rebuildData,setRebuildData] = useState(0);
     //requests
     const registerCategorie = async (evt)=>{
         evt.preventDefault()
@@ -32,7 +33,9 @@ export default function AdministratorPage(){
             method:'POST',
             body:data
         })
-        // setOpenModal(-1)      
+
+        setRebuildData(rebuildData+1)
+        setOpenModal(-1)      
     }
     const updateCategorie = async (evt)=>{
         evt.preventDefault()
@@ -48,6 +51,7 @@ export default function AdministratorPage(){
             method:'POST',
             body:data
         })
+        setRebuildData(rebuildData+1)
         setCategorie(0) 
         setOpenModal(-1)      
     }
@@ -66,7 +70,7 @@ export default function AdministratorPage(){
         }else{
             alert("Erreur: il faut renseigner un article et une categorie")
         }
-        
+        setRebuildData(rebuildData+1)
         setOpenModal(-1)
     }
     const updateClassification = async (evt)=>{
@@ -83,6 +87,7 @@ export default function AdministratorPage(){
         }else{
             alert("Erreur: il faut renseigner un article et une categorie")
         }
+        setRebuildData(rebuildData+1)
         setClassification(0)
         setOpenModal(-1)
     }
@@ -166,6 +171,7 @@ export default function AdministratorPage(){
     const sendUpdateModeration = (evt,row)=>{
         updateModeration(row.cells[0].data,evt.target.value)
         .then(data => alert(data.msg))
+        setRebuildData(rebuildData+1)
     }
     const router = useRouter()
     useEffect(()=>{
@@ -198,13 +204,6 @@ export default function AdministratorPage(){
             {id:'image',name:'image'},
             {id:'description',name:'description'},
             {id:'is_admin',name:'is_admin'},
-            {id:'edition',name:'edition',formatter: (cell, row) => {
-                return h('button', {
-                  className: 'btnedit',
-                //   onClick: () => alert(`Editing "${row.cells[0].data}" "${row.cells[1].data}"`)
-                }, 'Edit');
-              }
-            },
             {id:'supprimer',name:'supprimer',formatter: (cell, row) => {
                 return h('button', {
                   className: 'btnsupp',
@@ -222,7 +221,7 @@ export default function AdministratorPage(){
                 },
             }
         }).render(clientTabRef.current)
-    },[]);
+    },[rebuildData]);
 
     //all categories
     useEffect(() => {
@@ -240,6 +239,7 @@ export default function AdministratorPage(){
                     })
                     .then(data=>data.json())
                     .then(data => alert(data.msg))
+                    setRebuildData(rebuildData+1)
                 }}>
                             <option value={'0'}>0</option>
                             <option value={'1'}>1</option>
@@ -258,6 +258,7 @@ export default function AdministratorPage(){
                     })
                     .then(data=>data.json())
                     .then(data=> alert(data.msg))
+                    setRebuildData(rebuildData+1)
                 }}>Supprimer</button>)
             }}
             ],
@@ -271,7 +272,7 @@ export default function AdministratorPage(){
                 },
             }
         }).render(categoryTabRef.current)
-    },[]);
+    },[rebuildData]);
     
     //all recepies
     useEffect(() => {
@@ -308,6 +309,7 @@ export default function AdministratorPage(){
                             headers:{'content-type':'application/json'},
                             body:JSON.stringify({id:row.cells[0].data,state:evt.target.value})
                         }).then(data=>data.json()).then(data=>alert(data.msg))
+                        setRebuildData(rebuildData+1)
                     }}>
                         <option value='0'>0</option>
                         <option value='1'>1</option>
@@ -323,6 +325,7 @@ export default function AdministratorPage(){
                             headers:{'content-type':'application/json'},
                             body:JSON.stringify({id:row.cells[0].data,state:evt.target.value})
                         }).then(data=>data.json()).then(data=>alert(data.msg))
+                        setRebuildData(rebuildData+1)
                     }}>
                         <option value='0'>0</option>
                         <option value='1'>1</option>
@@ -333,7 +336,10 @@ export default function AdministratorPage(){
                 return h('button', {
                   className: 'btnsupp',
                   
-                  onClick: () =>deleteRecepie(row.cells[0].data).then(data=>alert(data.msg))
+                  onClick: () =>{
+                    deleteRecepie(row.cells[0].data).then(data=>alert(data.msg))
+                    setRebuildData(rebuildData+1)
+                }
                 }, 'Supprimer');
             }}
             ],
@@ -347,7 +353,7 @@ export default function AdministratorPage(){
                 },
             }
         }).render(recepieTabRef.current)
-    },[]);
+    },[rebuildData]);
 
     //all classification
     useEffect(() => {
@@ -368,6 +374,7 @@ export default function AdministratorPage(){
                     })
                     .then(data=>data.json())
                     .then(data => alert(data.msg))
+                    setRebuildData(rebuildData+1)
                 }}>
                             Supprimer
                         </button>)
@@ -383,7 +390,7 @@ export default function AdministratorPage(){
                 },
             }
         }).render(classificationRef.current)
-    },[]);
+    },[rebuildData]);
 
     return(
         <section className={styles.container}>

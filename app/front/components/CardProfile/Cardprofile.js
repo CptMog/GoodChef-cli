@@ -15,7 +15,7 @@ export default function Cardprofile({user,user_collection,user_stats}){
                 <figcaption>{user.first_name+" "+user.last_name}</figcaption>
             </figure>
             <div>
-                <div>
+                {/* <div>
                     <span>13</span>
                     <span>Recettes</span>
                 </div>
@@ -26,7 +26,7 @@ export default function Cardprofile({user,user_collection,user_stats}){
                 <div>
                     <span>22</span>
                     <span>Abonnement</span>
-                </div>
+                </div> */}
             </div>
             <div>
                 <h2>Recettes sauvegardées</h2>

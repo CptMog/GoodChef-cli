@@ -27,15 +27,15 @@ export default function RecetteHome(){
         <main className={styles.container}>
             <div className={styles.banner}>
                 <div>
-                    <h1>Bienvenu dans notre livre de recettes</h1>
+                    <h1>Bienvenue dans notre livre de recettes</h1>
                     <p>Ce recueille de recettes est alimenter par la
-    communauté de <strong>Good CHEF</strong>, vous souhaitez y contribuer ?</p>
+    communauté de <strong>Good CHEF</strong>. Vous souhaitez y contribuer ?</p>
                     <Link className={styles.btnprimary} href={"#"}>En savoir plus</Link>
                 </div>
                 <Image src={"/original.svg"} alt="image" width={427}  height={261} />
             </div>
             <div className={styles.containerrecepie}>
-                <div className={styles.filtercontainer}>
+                {/* <div className={styles.filtercontainer}>
                     <strong>Flitrer par : </strong>
                     <div className={styles.align}>
                         <span>Vinqueur concour</span>
@@ -86,7 +86,7 @@ export default function RecetteHome(){
                             <></>
                         }
                     </div>
-                </div>
+                </div> */}
                 <section>
                     <div className={styles.searchfiltercontainer}>
                         <div className={styles.searchBar}>
@@ -95,10 +95,10 @@ export default function RecetteHome(){
                             </div>
                             <input type="search" id="searchF" name="searchF" placeholder="Recherchez..." />
                         </div>
-                        <button className={styles.btnprimary}>
+                        {/* <button className={styles.btnprimary}>
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style={{fill: "rgba(255, 255, 255, 1)"}}><path d="M7 11h10v2H7zM4 7h16v2H4zm6 8h4v2h-4z"></path></svg>
                             filtre
-                        </button>
+                        </button> */}
                         <div className={styles.sort}>
                             <span>Trier par :</span>
                             <select>
@@ -115,9 +115,9 @@ export default function RecetteHome(){
                                 ))
                             }
                         </div>
-                        <button className={styles.btnprimary}>
+                        {/* <button className={styles.btnprimary}>
                             Charger
-                        </button>
+                        </button> */}
                     </div>
                 </section>
             </div>

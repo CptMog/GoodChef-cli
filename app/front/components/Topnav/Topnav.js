@@ -53,8 +53,9 @@ export default function Topnav(){
              })
              const res = await result.json()
              setClientInfo(res.user); 
-        } 
-        getSession()
+        }
+        if(localStorage.getItem('sessionID') != null) 
+            getSession()
      },[])
     return(
         <>

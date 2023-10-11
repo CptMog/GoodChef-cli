@@ -1,10 +1,9 @@
-
 import { useEffect, useState } from "react";
 import Trendcard from "../TrendCard/Trendcard";
 import styles from "./trend.module.css";
 
 export default function Trend(){
-    // const [cardColumn,setCardColumn] = useState([])
+
     const [recepies,setRecepies] = useState([])
 
     const getTrendings = async (limit)=>{
@@ -16,13 +15,6 @@ export default function Trend(){
         const res = await req.json()
         return res;
     }
-
-    // useEffect(()=>{
-      
-    //     if(recepies != []){ 
-    //         setRecepies(recepies)
-    //     }
-    // },[recepies])
 
     useEffect(()=>{
         
@@ -54,15 +46,17 @@ export default function Trend(){
         });
     },[])
     return (
+        <>
+       <div className={styles.titleContainer}>
+            <h2>Tendance</h2>
+       </div>
         <div className={styles.container}>
             {
-                // cardColumn.map((value,index)=>(
-                //     <p key={index}>teste</p>
-                // ))
                 recepies.map((recepie,index)=>(
                      <Trendcard key={index} id={recepie.id} setRecepies={setRecepies} recepies={recepies} recepie={recepie} />
                 ))
             }
         </div>
+        </>
     )
 }

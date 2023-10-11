@@ -2,7 +2,7 @@ import Link from "next/link"
 import styles from "./trendcard.module.css"
 
 export default function Trendcard({id,recepie,recepies,setRecepies}){
-    
+
     const update = ()=>{
         setRecepies(recepies.map((value,index)=>{return {...value,state:value.id==id?true:false}}))
     }

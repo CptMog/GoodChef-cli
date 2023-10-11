@@ -36,33 +36,6 @@
   z-index: 100;
 }
 
-.trendcontainer{
-  display:flex;
-  justify-content: space-between;
-  margin: 2rem 0;
-}
-
-.trendcontainer h2{
-  font-size: 2rem;
-  font-weight: normal;
-}
-
-.trendcontainer a{
-  padding: 0.625rem 1.5rem;
-  border-radius: 2.0625rem;
-  display: flex;
-  align-items: center;
-  background:  #F97B22;
-  border: 1px solid #F97B22;
-  color: white;
-}
-
-.trendcontainer a:hover{
-  background:  white;
-  color: #F97B22;
-  transition: all .3s;
-}
-
 .btnPrimary{
   padding: 0.5rem 0.6rem;
   border-radius: 2.0625rem;

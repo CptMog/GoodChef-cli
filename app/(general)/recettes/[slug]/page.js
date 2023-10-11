@@ -16,6 +16,21 @@ export default function RecepieView({params}){
     const [recepies,setRecepies] = useState([]);
     const [steps,setSteps] = useState([]);
     const [ingredients,setIngredients] = useState([]);
+    const [clientInfo,setClientInfo] = useState(0);
+    const [comments,setComments] = useState([])
+    useEffect(()=>{
+        async function getComments(){
+            const req = await fetch('http://localhost:8080/getRecepieComment',{
+                method:'POST', 
+                headers:{'Content-Type':'application/json'},
+                body:JSON.stringify({id_recepie:recepie.id})
+            });
+            const res = await req.json();
+            return res;
+        }
+        if(recepie != 0)
+            getComments().then(data=>setComments(data.comments))
+    },[recepie])
     const addPortion = ()=>{
         setPortion(portion+1);
     }
@@ -26,6 +41,20 @@ export default function RecepieView({params}){
             setPortion(portion-1)
         }
     }
+    useEffect(()=>{
+        async function getSession(){
+             const idSession = localStorage.getItem('sessionID');
+             const result =await fetch('http://localhost:8080/logged',{ 
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ sessionID:idSession })
+             })
+             const res = await result.json()
+             setClientInfo(res.user); 
+        }
+        if(localStorage.getItem('sessionID') != null) 
+            getSession()
+     },[])
 
     useEffect(()=>{
         
@@ -167,7 +196,7 @@ export default function RecepieView({params}){
                         <span>45 min</span>
                     </div>
                     <div>
-                        <a href="#comments">50 reviews</a>
+                        <a href="#comments">{comments.length} reviews</a>
                         <Image src={"/assets/4_star.png"} alt="notation" title="4 star dish" width={80} height={15}  />
                     </div>
                     <div className={styles.optioncontainer}>
@@ -257,8 +286,10 @@ export default function RecepieView({params}){
                 </Swiper>
             </section>
             <section id="comments" className={styles.comments}>
-                <h2>Commentaire (50)</h2>
-                <Comments />
+                {
+                    recepie != 0 && recepie.moderation_state ==1 ?<Comments recepie={recepie} id_client={clientInfo.id} /> :<></>
+                }
+                
             </section>
         </main>
     )

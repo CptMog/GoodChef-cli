@@ -1,7 +1,16 @@
 .commcard{
     display: flex;
     flex-direction: column;
-    margin-bottom: 1.5rem;
+    position: relative;
+    margin: .5rem 2rem 1rem 2rem;
+}
+
+.commcard p{
+    word-break: break-all;
+}
+
+.commcard img{
+    object-fit: cover;
 }
 
 .stars{
@@ -17,29 +26,66 @@
 }
 
 .commcard .profile{
-    width: 6.25rem;
-    height: 6.25rem;
+    width: 3.5625rem;
+    height: 3.5625rem;
     flex-shrink: 0;
     border-radius: 100%;
 }
 
 .commcard .info{
+    /* position: relative; */
     display: flex;
     flex-direction: column;
+    border-radius: 2.125rem;
 }
 
 .commcard .info span{
     color: #000;
+    position: relative;
 font-family: Roboto;
 font-size: 1rem;
 font-style: normal;
 font-weight: 700;
 line-height: normal;
+gap:.5rem;
 margin-bottom: .5rem;
+display: flex;
 }
 
 .commcard .info p{
     display: none;
+}
+
+.commcard .text{
+    background: #F0F2F5;
+    padding: 1rem 2rem;
+    border-radius: 2.125rem;
+}
+.commcard .editions{
+    /* position: absolute; */
+    display: flex;
+    flex-direction: column;
+    gap: .3rem;
+    /* top:-5px; */
+    right: -1px;
+}
+.commcard .editions svg{
+    cursor: pointer;
+    background-color:#F0F2F5 ;
+    border-radius: 2rem;
+}
+
+.commcard .MobileText,.commcard .info .desktopText{
+    background-color: #F0F2F5;
+}
+
+.commcard .info .desktopText{
+    display: none;
+}
+
+.commcard .MobileText{
+    display: flex;
+    flex-direction: column;
 }
 
 @media (min-width: 426px) and (max-width: 1023px){
@@ -47,19 +93,59 @@ margin-bottom: .5rem;
     .commcard .text{
         display: none;
     }
+    
+    .commcard .info {
+        background: #F0F2F5;
+        padding: 1rem 2rem;
+        border-top-left-radius: 0px;
+    }
 
     .commcard .info p{
         display: block;
     }
+
+    .commcard div:first-child{
+        align-items: flex-start;
+    }
+
+    .commcard .MobileText{
+        display: none !important;
+    }
+
+    .commcard .info .desktopText{
+        display: block;
+    }
+
 }
 
 @media (min-width: 1024px){
+    
+    .commcard div:first-child{
+        align-items: flex-start;
+    }
     
     .commcard .text{
         display: none;
     }
 
+    .commcard .info {
+        background: #F0F2F5;
+        padding: 1rem 2rem;
+        border-top-left-radius: 0px;
+    }
+
     .commcard .info p{
         display: block;
+        /* max-width: 80%; */
     }
+
+    .commcard .MobileText{
+        display: none !important;
+    }
+
+    .commcard .info .desktopText{
+        display: block;
+    }
+    
+
 }

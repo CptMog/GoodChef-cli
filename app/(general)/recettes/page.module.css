@@ -157,9 +157,9 @@
         width: 100%;
     }
 
-    .recepies{
+    /* .recepies{
         justify-content: flex-start;
-    }
+    } */
 }
 
 
@@ -227,7 +227,7 @@
     }
 
     .containerrecepie section{
-        width: 76%;
+        /* width: 76%; */
         padding:0 0 0 16px;
     }
     
@@ -259,6 +259,6 @@
 
     .recepies{
         justify-content: flex-start;
-    }
+    } 
 
 }

@@ -4,10 +4,21 @@ import { useEffect, useState } from "react";
 import Cardprofile from "@/app/front/components/CardProfile/Cardprofile"
 import Minirecepiecard from "@/app/front/components/MiniRecepieCard/Minirecepiecard"
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+
 
 export default function Dashboard(){
+    const router = useRouter()
     const [clientInfo,setClientInfo] = useState(0)
     const [recepies,setRecepies] = useState([])
+    const [recepieUne,setRecepieUne] = useState(0)
+
+    useEffect(()=>{
+        if(localStorage.getItem('sessionID') == null){
+            router.push('/')
+        }
+    },[])
+
     useEffect(()=>{
         async function getSession(){
              const idSession = localStorage.getItem('sessionID');
@@ -18,13 +29,19 @@ export default function Dashboard(){
              })
              const res = await result.json()
              setClientInfo(res.user); 
-        } 
-        getSession()
+        }
+        if(localStorage.getItem('sessionID') != null) 
+            getSession()
      },[])
  
      useEffect(()=>{
+        async function getRecepieUne(){
+            const request = await fetch('http://localhost:8080/getRecepieUne');
+            const response = await request.json();
+            return response;
+        }
         async function getRecepies(){
-            const request = await fetch('http://localhost:8080/getLimitRecepies',{
+            const request = await fetch('http://localhost:8080/getTrendings',{
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ limit:4 })
@@ -32,8 +49,10 @@ export default function Dashboard(){
             const response = await request.json();
             return response;
         }
+        getRecepieUne().then(data => setRecepieUne(data.recepie))
         getRecepies().then(data => setRecepies(data.recepies)) 
      },[])
+
     return(
         <section className={styles.container}>
             <Cardprofile  user={clientInfo}/>
@@ -52,7 +71,10 @@ export default function Dashboard(){
                 } 
                 </div>
                 <h2><strong>Recette</strong> du jour</h2>
-                {/* <div className={styles.recepieday}><Minirecepiecard  /></div> */}
+                {
+                    (recepieUne != null && recepieUne != 0)&&
+                    <div className={styles.recepieday}><Minirecepiecard recepie={recepieUne}  /></div>
+                }
             </div>
         </section>
     )

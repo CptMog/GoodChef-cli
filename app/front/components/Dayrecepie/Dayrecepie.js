@@ -13,7 +13,7 @@ export default function Dayrecepie(){
         getDayRecepie().then(data=>setRecepieDay(data.recepie))
     },[])
 
-    return(
+    return (recepieDay != null && recepieDay != 0)?
         <div className={styles.align}>
             <div>
                 <img src={recepieDay.image?"http://localhost:8080/uploads/"+recepieDay.image:"http://localhost:3000/imgbase.png"} alt="Recette du jour" />
@@ -27,5 +27,6 @@ export default function Dayrecepie(){
                 
             </div>
         </div>
-    )
+        :<></>
+    
 }

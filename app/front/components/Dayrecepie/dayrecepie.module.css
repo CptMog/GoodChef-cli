@@ -9,7 +9,7 @@
 
 .align div:first-child img{
     width: 100%;
-    object-fit: fill;
+    object-fit: cover;
     border-radius: 8px; 
 }
 
@@ -17,7 +17,6 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* padding: 0 3rem; */
 }
 
 .infos h2{
