@@ -25,6 +25,13 @@ export default function RecetteHome(){
     },[])
     return(
         <main className={styles.container}>
+            <title>GoodChef: Toutes nos recettes</title>
+            <meta name="description" content="La plateforme Goodchef permet de trouver des recettes délicieuses"/>
+            <meta name="keywords" content="recette,chef" />
+            <meta property="og:title" content="GoodChef" />
+            <meta property="og:type" content="website" />
+            <meta property="og:url" content="http://localhost:3000/" />
+            <meta property="og:description" content="La plateforme Goodchef permet de trouver des recettes délicieuses" />
             <div className={styles.banner}>
                 <div>
                     <h1>Bienvenue dans notre livre de recettes</h1>

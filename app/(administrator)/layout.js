@@ -5,15 +5,17 @@ import styles from "./layout.module.css";
 import Link from 'next/link';
 const inter = Inter({ subsets: ['latin'] })
 
-export const metadata = {
-  title: 'Administrator page',
-  description: 'This is the administration page',
-}
-
 export default function RootLayout({ children }) {
   
   return (
     <html lang="fr">
+      <title>Goodchef : Manager</title>
+        <meta name="description" content="La plateforme Goodchef permet de trouver des recettes délicieuses"/>
+        <meta name="keywords" content="recette,chef" />
+        <meta property="og:title" content="GoodChef" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="http://localhost:3000/" />
+        <meta property="og:description" content="La plateforme Goodchef permet de trouver des recettes délicieuses" />
       <body style={{backgroundColor:"white"}} className={inter.className}>
         <header className={styles.head}>
             <nav>

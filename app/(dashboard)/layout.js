@@ -11,7 +11,14 @@ export default function RootLayout({ children }) {
     const [isMenuOpen,setIsMenuOpen] = useState(0);
 
     return (
-        <html lang="fr">
+        <html lang="fr">            
+        <title>Goodchef : Dashboard</title>
+        <meta name="description" content="La plateforme Goodchef permet de trouver des recettes délicieuses"/>
+        <meta name="keywords" content="recette,chef" />
+        <meta property="og:title" content="GoodChef" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="http://localhost:3000/" />
+        <meta property="og:description" content="La plateforme Goodchef permet de trouver des recettes délicieuses" />
           <body style={{backgroundColor:"white"}} className={inter.className}>
                   <div className={styles.menuopener}>
                       {
