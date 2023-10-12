@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'GoodChef',
-  description: 'Le plateforme Goodchef permet de trouver des recettes délicieuses',
+  description: 'La plateforme Goodchef permet de trouver des recettes délicieuses',
 }
 
 export default function RootLayout({ children }) {
