@@ -1,3 +1,4 @@
+'use client';
 import Link from "next/link";
 import styles from "./topnav.module.css"
 import { useState, useEffect } from "react";
@@ -7,6 +8,7 @@ export default function Topnav(){
     let [clicked,setClicked] = useState(0);
     const [clientInfo,setClientInfo] = useState(0);
     const [isOvered,setIsOvered] = useState(false);
+    // const getLink =()=>localStorage.getItem();
     const logOutUser = async()=>{
         const idSession = localStorage.getItem('sessionID');
         await fetch("http://localhost:8080/logout",{
@@ -39,7 +41,7 @@ export default function Topnav(){
             <div className={styles.containerLogin}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style={{fill: "rgba(0, 0, 0, 1)"}}><path d="M10 18a7.952 7.952 0 0 0 4.897-1.688l4.396 4.396 1.414-1.414-4.396-4.396A7.952 7.952 0 0 0 18 10c0-4.411-3.589-8-8-8s-8 3.589-8 8 3.589 8 8 8zm0-14c3.309 0 6 2.691 6 6s-2.691 6-6 6-6-2.691-6-6 2.691-6 6-6z"></path></svg>
                 <Link href={"/connexion"}>connexion</Link>
-                <Link href={"/inscription"}><button className={styles.registration}>inscription</button></Link>
+                <Link className={styles.registration} href={"/inscription"}>inscription</Link>
             </div>
     }
 
@@ -72,6 +74,9 @@ export default function Topnav(){
                         <li className={styles.list}><Link href={"#"}>Chef's Blog</Link></li>
                         <li className={styles.list}><Link href={"#"}>A propos</Link></li>
                         <li className={styles.list}><Link href={"#"}>Contact</Link></li>
+                        <li className={styles.tabletOnly}>
+                            {logSystem()}  
+                        </li>
                     </ul>
                     
                     <Link href={"/"}>
@@ -86,7 +91,7 @@ export default function Topnav(){
                 <li><Link href={"/"}><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style={{fill: "rgba(0, 0, 0, 1)"}}><path d="M3 13h1v7c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2v-7h1a1 1 0 0 0 .707-1.707l-9-9a.999.999 0 0 0-1.414 0l-9 9A1 1 0 0 0 3 13zm7 7v-5h4v5h-4zm2-15.586 6 6V15l.001 5H16v-5c0-1.103-.897-2-2-2h-4c-1.103 0-2 .897-2 2v5H6v-9.586l6-6z"></path></svg></Link></li>
                 <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style={{fill: "rgba(0, 0, 0, 1)"}}><path d="M10 18a7.952 7.952 0 0 0 4.897-1.688l4.396 4.396 1.414-1.414-4.396-4.396A7.952 7.952 0 0 0 18 10c0-4.411-3.589-8-8-8s-8 3.589-8 8 3.589 8 8 8zm0-14c3.309 0 6 2.691 6 6s-2.691 6-6 6-6-2.691-6-6 2.691-6 6-6z"></path></svg></li>
                 <li><Link href={"/recettes"}><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style={{fill: "rgba(0, 0, 0, 1)"}}><path d="M6 22h15v-2H6.012C5.55 19.988 5 19.805 5 19s.55-.988 1.012-1H21V4c0-1.103-.897-2-2-2H6c-1.206 0-3 .799-3 3v14c0 2.201 1.794 3 3 3zM5 8V5c0-.805.55-.988 1-1h13v12H5V8z"></path><path d="M8 6h9v2H8z"></path></svg></Link></li>
-                <li><Link href={"/connexion"}><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style={{fill: "rgba(0, 0, 0, 1)"}}><path d="M12 2a5 5 0 1 0 5 5 5 5 0 0 0-5-5zm0 8a3 3 0 1 1 3-3 3 3 0 0 1-3 3zm9 11v-1a7 7 0 0 0-7-7h-4a7 7 0 0 0-7 7v1h2v-1a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5v1z"></path></svg></Link></li>
+                <li><Link href={"/dashboard"}><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style={{fill: "rgba(0, 0, 0, 1)"}}><path d="M12 2a5 5 0 1 0 5 5 5 5 0 0 0-5-5zm0 8a3 3 0 1 1 3-3 3 3 0 0 1-3 3zm9 11v-1a7 7 0 0 0-7-7h-4a7 7 0 0 0-7 7v1h2v-1a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5v1z"></path></svg></Link></li>
             </ul>
         </div>
         </>

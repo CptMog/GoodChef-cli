@@ -61,9 +61,10 @@
 .listNaviation{
     position: absolute;
     background-color: white;
-    padding: 4px;
+    padding: .5rem 2rem;
+    border-radius:.8rem;
     top: 90px;
-    right: 0;
+    right: 1rem;
 }
 
 .listNaviation li{
@@ -81,6 +82,7 @@
 .list{
     list-style: none;
     margin: 0px 8px;
+    border-bottom:1px solid transparent;
 }
 
 .list:hover{
@@ -88,15 +90,20 @@
 
 }
 
-.containerLogin{
+.containerLogin,.tabletOnly .containerLogin{
     display: none;
 }
+
+.tabletOnly {
+    list-style: none;
+}
+
+
 
 .registration{
     background-color: var(--primary-color);
     border: 1px solid var(--primary-color);
     color: white;
-    border: none;
     border-radius: 8px;
     font-size: 16px;
     padding: 16px;
@@ -120,6 +127,57 @@
     .submenuConatainer{
         display: none;
     }
+
+    .tabletOnly .containerLogin{
+        display: flex;
+        align-items: center;
+        gap: .8rem;
+    }
+
+    .tabletOnly .avatarContainer{
+        display: block;
+    }
+
+
+    .tabletOnly .avatarContainer{
+        display: flex;
+        justify-content: center;
+        gap:1.5rem;
+        align-items: center;
+        position: relative;
+    }
+
+    .tabletOnly .avatarContainer img{
+        display: block;
+        object-fit: cover;
+        border-radius: 64px;
+        /* cursor: pointer; */
+    }
+
+    .tabletOnly .avatarContainer .profileMenu{
+        position: absolute;
+        background-color: white;
+        top:4rem;
+        /* border: 1px solid; */
+        left: 0%;
+        padding: .8rem .3rem;
+        border-radius: .5rem;
+        box-shadow: 0px 10px 8px rgba(193, 193, 193, 0.25);
+    }
+
+    .tabletOnly .avatarContainer .profileMenu ul{
+        padding: 0;
+        margin: 0;
+    }
+
+    .tabletOnly .avatarContainer .profileMenu ul li{
+        list-style: none;
+        padding: .5rem 1rem;
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+
 }
 
 /*DESKTOP  */
@@ -161,6 +219,11 @@
         gap: 1.2rem;
         margin-left: 8%;
     }
+
+    .tabletOnly .avatarContainer{
+        display: none;
+    }
+
 
     .avatarContainer{
         width: 21.5rem;

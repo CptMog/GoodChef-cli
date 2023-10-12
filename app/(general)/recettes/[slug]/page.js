@@ -17,7 +17,23 @@ export default function RecepieView({params}){
     const [steps,setSteps] = useState([]);
     const [ingredients,setIngredients] = useState([]);
     const [clientInfo,setClientInfo] = useState(0);
-    const [comments,setComments] = useState([])
+    const [comments,setComments] = useState([]);
+    const [timeP,setTimeP] = useState([])
+    const [timeR,setTimeR] = useState([])
+    const [timeC,setTimeC] = useState([])
+    const getTotalTime = ()=>{
+        let hours = parseInt(timeP[0])+parseInt(timeR[0])+parseInt(timeC[0])
+        let minutes = parseInt(timeP[1])+parseInt(timeR[1])+parseInt(timeC[1])
+
+        if(minutes >= 60){
+            minutes -= 60;
+            hours++;
+        }
+
+        return `${hours}h${minutes}min`
+           
+    }
+    
     useEffect(()=>{
         async function getComments(){
             const req = await fetch('http://localhost:8080/getRecepieComment',{
@@ -55,6 +71,15 @@ export default function RecepieView({params}){
         if(localStorage.getItem('sessionID') != null) 
             getSession()
      },[])
+    
+    useEffect(()=>{
+        if(recepie !=0){
+            setTimeP(recepie.time_prepare.split(/\h|\min/))
+            setTimeR(recepie.time_rest.split(/\h|\min/))
+            setTimeC(recepie.time_cooking.split(/\h|\min/))
+        }
+        
+    },[recepie])
 
     useEffect(()=>{
         
@@ -76,10 +101,9 @@ export default function RecepieView({params}){
         getRecepies()
         .then(data=>setRecepies(data.recepies))
         
-        // setInterval(()=>{
-            getARecepie()
-            .then(data=>setRecepie(data.recepie))
-        // },2000)
+        getARecepie()
+        .then(data=>setRecepie(data.recepie))
+
 
     },[])
 
@@ -166,7 +190,11 @@ export default function RecepieView({params}){
                             <span>total</span>
                             <span>
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" style={{fill: "rgba(0, 0, 0, 1)"}}><path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z"></path><path d="M13 7h-2v6h6v-2h-4z"></path></svg>
-                                XXmin
+                               { recepie != 0&&
+                                    <>
+                                        {getTotalTime()}
+                                    </>
+                               }
                             </span>
                         </div>
                         <div>
@@ -193,7 +221,7 @@ export default function RecepieView({params}){
                     </div>
                     <div className={styles.time}>
                         <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" style={{fill: "rgba(0, 0, 0, 1)"}}><path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z"></path><path d="M13 7h-2v6h6v-2h-4z"></path></svg>
-                        <span>45 min</span>
+                        <span>{getTotalTime()}</span>
                     </div>
                     <div>
                         <a href="#comments">{comments.length} reviews</a>
